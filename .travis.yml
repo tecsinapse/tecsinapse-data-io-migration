@@ -17,6 +17,7 @@ after_success:
 cache:
   directories:
   - "$HOME/.m2"
+
 env:
   global:
   - GPG_DIR="`pwd`/travis"
