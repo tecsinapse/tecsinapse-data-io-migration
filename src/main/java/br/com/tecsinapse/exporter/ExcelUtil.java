@@ -5,6 +5,7 @@ import br.com.tecsinapse.exporter.util.ExporterUtil;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
 
 public final class ExcelUtil {
 
@@ -42,6 +43,17 @@ public final class ExcelUtil {
     }
 
     /**
+     * This method is moved. It will be removed. Use dependency "ts-data-ie-jsf"
+     *
+     * @deprecated use methods from {@link br.com.tecsinapse.exporter.servlet.ExportServletUtil#facesDownloadCsv(String, Table, String)}
+     * @throws IOException IOException IOException
+     */
+    @Deprecated
+    public static void exportCsv(String name, Table table, String charset) throws IOException {
+        ExportServletUtil.facesDownloadCsv(name, table, charset);
+    }
+
+    /**
      * This class is moved. It will be removed in future version
      *
      * @deprecated use {@link br.com.tecsinapse.exporter.util.ExporterUtil#getXlsFile(Table, String)}
@@ -64,10 +76,10 @@ public final class ExcelUtil {
     /**
      * This class is moved. It will be removed in future version
      *
-     * @deprecated use {@link br.com.tecsinapse.exporter.util.ExporterUtil#getCsvFile(Table, File, String, char)}
+     * @deprecated use {@link br.com.tecsinapse.exporter.util.ExporterUtil#writeCsvToOutput(Table, String, OutputStream)}
      */
     @Deprecated
-    public static File getSvFile(Table table, String filename, String charset, char separator) throws IOException {
-        return ExporterUtil.getCsvFile(table, filename, charset, separator);
+    public static void exportCsv(Table table, String charset, OutputStream outputStream) throws IOException {
+        ExporterUtil.writeCsvToOutput(table, charset, outputStream);
     }
 }
