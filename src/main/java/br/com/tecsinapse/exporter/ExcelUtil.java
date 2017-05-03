@@ -82,4 +82,14 @@ public final class ExcelUtil {
     public static void exportCsv(Table table, String charset, OutputStream outputStream) throws IOException {
         ExporterUtil.writeCsvToOutput(table, charset, outputStream);
     }
+
+    /**
+     * This class is moved. It will be removed in future version
+     *
+     * @deprecated use {@link br.com.tecsinapse.exporter.util.ExporterUtil#getCsvFile(Table, String, String, char)}
+     */
+    @Deprecated
+    public static File getSvFile(Table table, String fileName, String charsetName, char separator) throws IOException {
+        return ExporterUtil.getCsvFile(table, fileName, charsetName, separator);
+    }
 }
