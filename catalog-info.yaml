@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: tecsinapse-data-io-migration-catalog
+  description: Entidades do tecsinapse-data-io-migration no Backstage
+spec:
+  type: url
+  targets:
+    - ./catalog/tecsinapse-data-io-migration.yaml
